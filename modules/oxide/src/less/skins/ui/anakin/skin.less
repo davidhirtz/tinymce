@@ -1,0 +1,151 @@
+@import 'src/less/theme/theme';
+
+//
+// Place your variables here
+//
+
+// global-variables.less
+@background-color: #fff;
+@color-black: #000;
+@color-tint: @color-black;
+
+@border-color: #ddd;
+@text-color: #555;
+@font-stack: "ATC Overlook", sans-serif;
+@line-height-base: 1.4;
+
+@base-value: 15px;
+@font-size-base: 16px;
+
+@pad-xs: 5px;
+@pad-sm: 10px;
+@pad-md: @base-value;
+@pad-lg: 20px;
+@pad-xl: 25px;
+
+@panel-border-radius: .3rem; // Dialogs, menues etc.
+@control-border-radius: 0; // Buttons, input fields etc.
+
+// global.less
+@tinymce-border-radius: 0;
+@tinymce-border-width: 0;
+@tinymce-border-color: transparent;
+@tinymce-separator-color: @border-color;
+
+// dialog.less
+//@dialog-background-color: #fff;
+//@dialog-backdrop-background-color-opaque: rgba(255, 255, 255, .8);
+@dialog-border-radius: @panel-border-radius;
+@dialog-title-text-color: #000;
+@dialog-background-color: #fff;
+@dialog-header-padding: @pad-sm @pad-md;
+@dialog-header-separator-border: 0;
+@dialog-footer-separator-border: 0;
+@dialog-title-font-weight: 700;
+
+// button.less
+@button-font-family: "Bebas Neue", sans-serif;
+@button-letter-spacing: .15em;
+@button-padding-x: 12px;
+@button-padding-y: 12px;
+@button-font-weight: 400;
+@button-line-height: 1;
+@button-font-size: .875rem;
+
+// button-secondary.less
+
+@button-secondary-background-color: #d1e8ef;
+@button-secondary-hover-background-color: #abd5e2;
+@button-secondary-text-color: #000;
+
+// edit-area.less
+@edit-area-iframe-background-color: transparent;
+@edit-area-border: 0;
+@edit-area-border-color: #74bcd1;
+@edit-area-border-width: 1px;
+
+.tox .tox-edit-area::before {
+  border-radius: 0; // Not sure why this was hardcoded to 4px
+  z-index: 0; // Otherwise this overlaps with sticky button footers
+}
+
+// collection.less
+.tox-collection__item-label * {
+  font-family: @font-stack !important;
+  font-size: @textfield-font-size !important;
+}
+
+// editor.less
+@editor-header-border: 0;
+@editor-header-box-shadow: none;
+@editor-header-sticky-box-shadow: none;
+
+.tox:not(.tox-tinymce-inline) .tox-editor-header {
+  padding-top: 0;
+}
+
+// label.less
+@input-label-text-color: @color-black;
+
+.tox .tox-label {
+  font-weight: bold;
+  padding: 0 @pad-sm @pad-xs 0;
+}
+
+// layout.less
+@form-group-vertical-spacing: @pad-md;
+
+// menu.less
+@collection-item-label-font-size: @font-size-sm;
+
+// textfield.less
+@textfield-background-color: #fff;
+@textfield-font-size: 14px;
+@textfield-pad-x: 12px;
+@textfield-pad-y: 12px;
+@textfield-text-color: @color-black;
+@textfield-line-height: 1.4;
+@textfield-focus-border-color: #74bcd1;
+@textfield-line-height: 20px;
+@textfield-border-color: transparent;
+
+// toolbar-button.less
+@toolbar-button-height: 37px; // With margin results in 48px;
+@toolbar-button-border-radius: 0;
+@toolbar-button-hover-background-color: #f9f9f9;
+@toolbar-button-enabled-background-color: #f5f5f5;
+
+// toolbar-group.less
+@toolbar-group-separator-color: #ebebeb;
+
+.tox:not([dir=rtl]) {
+  .tox-toolbar__group:first-child {
+    padding-left: 0;
+  }
+}
+
+// toolbar-select-button.less
+@toolbar-button-bespoke-background-color: #eee;
+@toolbar-button-select-padding: 12px;
+@toolbar-button-bespoke-label-max-width: 100px;
+
+.tox .tox-tbtn--bespoke {
+  height: 38px;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.tox .tox-tbtn__select-label {
+  margin: 0;
+}
+
+// Other CSS changes
+.tox-textfield,
+.tox-listbox--select,
+.tox-edit-area__iframe {
+  box-shadow: inset 2px 2px 6px #00000021 !important;
+}
+
+.tox-listbox__select-label {
+  margin: 0 !important;
+}
