@@ -7,10 +7,21 @@
 // global-variables.less
 @background-color: #f5f5f5;
 @color-black: #000;
+@color-tint: @color-black;
+
 @border-color: #ddd;
 @text-color: #555;
 @font-stack: "Open Sans", sans-serif;
 @line-height-base: 1.4;
+
+@base-value: 15px;
+@font-size-base: 16px;
+
+@pad-xs: 5px;
+@pad-sm: 10px;
+@pad-md: @base-value;
+@pad-lg: 20px;
+@pad-xl: 25px;
 
 @panel-border-radius: 3px; // Dialogs, menues etc.
 @control-border-radius: 3px; // Buttons, input fields etc.
@@ -20,7 +31,53 @@
 @tinymce-border-width: 1px;
 @tinymce-separator-color: @border-color;
 
+// dialog.less
+//@dialog-background-color: #fff;
+//@dialog-backdrop-background-color-opaque: rgba(255, 255, 255, .8);
+@dialog-border-radius: @panel-border-radius;
+@dialog-title-text-color: #000;
+
+@dialog-background-color: #fff;
+@dialog-header-padding: @pad-sm @pad-md;
+@dialog-header-separator-border: 1px solid @tinymce-border-color;
+@dialog-footer-separator-border: 1px solid @tinymce-border-color;
+
+// button.less
+@button-padding-x: 12px;
+@button-padding-y: 8px;
+@button-font-weight: normal;
+
 // editor.less
 @editor-header-border: 1px solid @tinymce-border-color;
 @editor-header-box-shadow: none;
 @editor-header-sticky-box-shadow: none;
+
+// layout.less
+@form-group-vertical-spacing: @pad-md;
+
+// menu.less
+@collection-item-label-font-size: @font-size-sm;
+
+// textfield.less
+@textfield-background-color: #fff;
+@textfield-font-size: 14px;
+@textfield-pad-x: 12px;
+@textfield-pad-y: 8px;
+@textfield-text-color: #555;
+@textfield-line-height: 1.4;
+@textfield-focus-border-color: #66afe9;
+
+// Override de styles dropdown inline stylings
+.tox-collection__item-label * {
+  font-family: @font-stack !important;
+  font-size: @textfield-font-size !important;
+}
+
+.tox .tox-label {
+  font-weight: bold;
+  padding: 0 @pad-sm @pad-xs 0;
+}
+
+.tox-listbox__select-label {
+  margin: 0 !important;
+}
