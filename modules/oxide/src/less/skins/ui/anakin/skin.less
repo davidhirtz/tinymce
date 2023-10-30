@@ -49,8 +49,9 @@
 @button-padding-x: 12px;
 @button-padding-y: 12px;
 @button-font-weight: 400;
-@button-line-height: 1;
+@button-line-height: 1.4;
 @button-font-size: .875rem;
+@button-border-width: 0;
 
 // button-secondary.less
 
@@ -80,9 +81,12 @@
 @editor-header-box-shadow: none;
 @editor-header-sticky-box-shadow: none;
 
-.tox:not(.tox-tinymce-inline) .tox-editor-header {
+.tox:not(.tox-tinymce-inline):not(.tox-fullscreen) .tox-editor-header {
   padding-top: 0;
 }
+
+// fullscreen.less
+@fullscreen-container-background-color: @background-color;
 
 // label.less
 @input-label-text-color: @color-black;
@@ -97,6 +101,7 @@
 
 // menu.less
 @collection-item-label-font-size: @font-size-sm;
+@menu-border-radius: 0;
 
 // textfield.less
 @textfield-background-color: #fff;
@@ -118,7 +123,7 @@
 // toolbar-group.less
 @toolbar-group-separator-color: #ebebeb;
 
-.tox:not([dir=rtl]) {
+.tox:not([dir=rtl]):not(.tox-fullscreen) {
   .tox-toolbar__group:first-child {
     padding-left: 0;
   }
